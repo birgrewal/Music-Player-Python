@@ -34,7 +34,6 @@ def play():
     if current == '':
         current = sList[0]
 
-    print(sList)
     i = sList.index(current)
     changeThumb()
 
@@ -44,7 +43,7 @@ def play():
         mixer.music.load(musicFolder+current)
         mixer.music.play()
         start = True
-    
+
 def pause():
     mixer.music.pause()    
 
@@ -90,11 +89,9 @@ def addsongs():
     if len(songs) != 0:
         sList = songs
         current = sList[0]
+        print(current)
         musicFolder = ''
-        pause()
-        changeThumb()
-        start = False
-        play()
+        next()
 
 # Main GUI Code   
 root = customtkinter.CTk()
