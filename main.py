@@ -42,6 +42,7 @@ def play():
     else:
         mixer.music.load(musicFolder+current)
         mixer.music.play()
+        mixer.music.queue(musicFolder+current)
         start = True
 
 def pause():
@@ -113,23 +114,6 @@ mainmenu.grid(row=0, column=0,padx=5, pady=5, sticky="nw")
 
 addSongs = customtkinter.CTkButton(mainmenu, text="Add Songs", width=50, height=20, font=md, corner_radius=0, command=addsongs, fg_color="transparent")
 addSongs.grid(padx=5,ipadx=5,ipady=5,sticky="w")
-
-# Music List
-# mList = customtkinter.CTkFrame(master=root, width=300, height=370)
-# mList.grid(row=0, column=0, padx=5, pady=5, sticky="nw")
-
-# textbox = tkinter.Text(mList, highlightthickness=0, bg="black", width=300, height=10)
-# textbox.grid(row=0, column=0, sticky="nsew")
-
-# for i in sList:
-#     item = customtkinter.CTkButton(textbox, text=f"{i[0:25]}...", width=75, height=75, font=md, border_spacing=0, command=play)
-#     item.grid(sticky="w",pady=2)
-
-# scrollbar = customtkinter.CTkScrollbar(textbox, command=textbox.yview)
-# scrollbar.grid(row=0, column=1, sticky="ns")
-
-# connect textbox scroll event to CTk scrollbar
-# textbox.configure(yscrollcommand=scrollbar.set)
 
 # Music Thumbnail
 mThumb = customtkinter.CTkFrame(master=root, width=835, height=370, fg_color="transparent")
